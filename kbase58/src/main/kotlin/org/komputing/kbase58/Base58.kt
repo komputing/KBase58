@@ -157,6 +157,6 @@ fun String.decodeBase58WithChecksum(): ByteArray {
     if (checksum.contentEquals(computedChecksum)) {
         return payload
     } else {
-        throw Exception("Checksum mismatch: $this ")
+        throw IllegalArgumentException("Checksum mismatch: $checksum is not computed checksum $computedChecksum")
     }
 }
