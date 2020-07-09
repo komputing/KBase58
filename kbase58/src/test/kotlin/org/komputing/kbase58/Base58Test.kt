@@ -2,7 +2,8 @@ package org.komputing.kbase58
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import org.walleth.khex.hexToByteArray
+import org.komputing.khex.extensions.hexToByteArray
+import org.komputing.khex.model.HexString
 
 class Base58Test {
 
@@ -25,14 +26,14 @@ class Base58Test {
     @Test
     fun encodingToBase58Works() {
         TEST_VECTORS.forEach {
-            assertThat(it.key.hexToByteArray().encodeToBase58String()).isEqualTo(it.value)
+            assertThat(HexString(it.key).hexToByteArray().encodeToBase58String()).isEqualTo(it.value)
         }
     }
 
     @Test
     fun decodingFromBase58Works() {
         TEST_VECTORS.forEach {
-            assertThat(it.value.decodeBase58()).isEqualTo(it.key.hexToByteArray())
+            assertThat(it.value.decodeBase58()).isEqualTo(HexString(it.key).hexToByteArray())
         }
     }
 }
