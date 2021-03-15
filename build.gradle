@@ -5,7 +5,7 @@ buildscript {
         kotlin_version = '1.4.31'
         khex_version = '1.0.0'
         khash_version = '1.0.0-RC5'
-        jupiter_version = '5.6.2'
+        jupiter_version = '5.7.1'
     }
 
     repositories {
