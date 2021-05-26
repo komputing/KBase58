@@ -4,7 +4,7 @@ buildscript {
     ext {
         kotlin_version = '1.5.10'
         khex_version = '1.1.2'
-        khash_version = '1.1.0'
+        khash_version = '1.1.1'
         jupiter_version = '5.7.2'
     }
 
