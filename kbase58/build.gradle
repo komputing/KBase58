@@ -4,7 +4,7 @@ repositories {
 }
 
 apply plugin: "kotlin"
-apply plugin: "maven"
+apply plugin: "maven-publish"
 
 java {
     withJavadocJar()
@@ -13,6 +13,14 @@ java {
 
 test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
 }
 
 dependencies {
